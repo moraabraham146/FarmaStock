@@ -1,58 +1,34 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 💊 FarmaStock — Sistema de Gestión e Inventario Farmacéutico
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> **Módulo de Backend — Asignatura Programación II (UNETI)**  
+> **Desarrollado por:**  (Albert Mass, Abraham Mora, Mario Tovar) / Equipo FarmaStock  
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📋 Descripción del Proyecto
+FarmaStock es una solución robusta orientada al control integral de inventarios farmacéuticos (entradas, salidas, gestión de lotes y administración de almacén), diseñada bajo los estándares de arquitectura limpia y alta disponibilidad para entornos corporativos B2B.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Stack Tecnológico (Soberanía y Robustez)
+El sistema está construido sobre una infraestructura moderna, auditada y libre de vulnerabilidades críticas:
+* **Lenguaje:** PHP 8.3.36 (NTS x64) — *Versión parcheada contra fallos RCE recientes.*
+* **Framework Backend:** Laravel (Arquitectura MVC / ORM Eloquent).
+* **Base de Datos:** MySQL 8.4.3 (Gestionada localmente mediante motor relacional optimizado).
+* **Entorno de Desarrollo:** Laragon (Apache 2.4 / PHP CLI / Composer 2.x).
+* **Control de Versiones:** Git & GitHub (Flujo basado en ramas y commits semánticos).
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📂 Arquitectura del Directorio Backend
+```text
+FarmaStock/
+├── app/                  # Lógica de negocio (Controladores, Modelos, Middleware)
+├── bootstrap/            # Arranque del framework y configuración de contenedores
+├── config/               # Archivos de configuración general del sistema
+├── database/             # Migraciones, Factories y Seeders (Esquema relacional)
+├── public/               # Punto de entrada web (DocumentRoot de Apache)
+├── resources/            # Vistas (Blade), hojas de estilo y assets de frontend
+├── routes/               # Definición de rutas API y Web
+├── storage/              # Logs de auditoría, caché y archivos compilados
+└── tests/                # Pruebas unitarias y de integración
