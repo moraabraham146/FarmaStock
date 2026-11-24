@@ -1,7 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MedicinaController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+|--------------------------------------------------------------------------
+| Rutas Web - FarmaStock
+|--------------------------------------------------------------------------
+| Registro de endpoints operacionales para el sistema de inventario farmacéutico.
+*/
+
+Route::resource('medicinas', MedicinaController::class);
