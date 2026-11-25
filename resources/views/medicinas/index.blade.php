@@ -5,7 +5,7 @@
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="h3">Medicinas</h1>
-        <a href="#" class="btn btn-primary">+ Nueva medicina</a>
+        <a href="{{ route('medicinas.create') }}" class="btn btn-primary">+ Nueva medicina</a>
     </div>
 
     <div class="card shadow-sm">
@@ -43,8 +43,13 @@
                             </td>
                             <td class="text-end">
                                 <a href="#" class="btn btn-sm btn-secondary">Ver</a>
-                                <a href="#" class="btn btn-sm btn-secondary">Editar</a>
-                                <a href="#" class="btn btn-sm btn-secondary">Eliminar</a>
+                                <a href="{{ route('medicinas.edit', $medicina) }}" class="btn btn-sm btn-secondary">Editar</a>
+                                <form action="{{ route('medicinas.destroy', $medicina) }}" method="POST" class="d-inline"
+                                    onsubmit="return confirm('¿Eliminar {{ $medicina->nombre }}?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-secondary">Eliminar</button>
+                                </form>
                             </td>
                         </tr>
                     @empty

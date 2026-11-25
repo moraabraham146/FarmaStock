@@ -5,13 +5,13 @@
 @section('content')
     <h1 class="h3 mb-3">Nueva medicina</h1>
 
-    <form action="#" method="POST" class="card card-body shadow-sm">
+    <form action="{{ route('medicinas.store') }}" method="POST" class="card card-body shadow-sm">
         @csrf
 
         <div class="row g-3">
             <div class="col-md-4">
                 <label for="codigo" class="form-label">Código</label>
-                <input type="text" name="codigo" id="codigo" maxlength="50"
+                <input type="text" name="codigo" id="codigo" maxlength="50"  required
                        class="form-control @error('codigo') is-invalid @enderror"
                        value="{{ old('codigo') }}">
                 @error('codigo') <div class="invalid-feedback">{{ $message }}</div> @enderror
@@ -19,7 +19,7 @@
 
             <div class="col-md-8">
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" name="nombre" id="nombre" maxlength="150"
+                <input type="text" name="nombre" id="nombre" maxlength="150" required
                        class="form-control @error('nombre') is-invalid @enderror"
                        value="{{ old('nombre') }}">
                 @error('nombre') <div class="invalid-feedback">{{ $message }}</div> @enderror
@@ -41,13 +41,13 @@
 
             <div class="col-md-6">
                 <label for="principio_activo" class="form-label">Principio activo</label>
-                <input type="text" name="principio_activo" id="principio_activo" maxlength="150"
+                <input type="text" name="principio_activo" id="principio_activo" maxlength="150" required
                        class="form-control" value="{{ old('principio_activo') }}">
             </div>
 
             <div class="col-md-6">
                 <label for="presentacion" class="form-label">Presentación</label>
-                <input type="text" name="presentacion" id="presentacion" maxlength="80"
+                <input type="text" name="presentacion" id="presentacion" maxlength="80" required
                        class="form-control @error('presentacion') is-invalid @enderror"
                        value="{{ old('presentacion') }}">
                 @error('presentacion') <div class="invalid-feedback">{{ $message }}</div> @enderror
@@ -55,24 +55,22 @@
 
             <div class="col-md-6">
                 <label for="laboratorio" class="form-label">Laboratorio</label>
-                <input type="text" name="laboratorio" id="laboratorio" maxlength="100"
+                <input type="text" name="laboratorio" id="laboratorio" maxlength="100" required
                        class="form-control" value="{{ old('laboratorio') }}">
             </div>
 
             <div class="col-md-6">
                 <label for="precio_unitario" class="form-label">Precio unitario</label>
-                <input type="number" step="0.01" min="0" name="precio_unitario" id="precio_unitario"
+                <input type="number" step="0.01" min="0" name="precio_unitario" id="precio_unitario" required
                        class="form-control @error('precio_unitario') is-invalid @enderror"
                        value="{{ old('precio_unitario', '0.00') }}">
                 @error('precio_unitario') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
 
             <div class="col-md-6">
-                <label for="stock_minimo" class="form-label">Stock mínimo</label>
-                <input type="number" min="0" name="stock_minimo" id="stock_minimo"
-                       class="form-control @error('stock_minimo') is-invalid @enderror"
-                       value="{{ old('stock_minimo', 5) }}">
-                @error('stock_minimo') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                <label for="stock_minimo" class="form-label">Stock mínimo (alerta de reposición)</label>
+                <input type="number" min="0" name="stock_minimo" id="stock_minimo">
+                <div class="form-text">El stock inicia en 0. Se agrega con una entrada en Movimientos.</div>
             </div>
 
             <div class="col-12">

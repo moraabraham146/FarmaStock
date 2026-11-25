@@ -23,7 +23,7 @@
             <a class="navbar-brand fs-3 fw-bold py-0" href="/">💊 FarmaStock</a>
             <ul class="navbar-nav ms-auto flex-row gap-3">
                 <li class="nav-item"><a class="nav-link" href="/inventario">Almacén</a></li>
-                <li class="nav-item"><a class="nav-link" href="/medicinas">Medicinas</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('medicinas.index') }}">Medicinas</a></li>
                 <li class="nav-item"><a class="nav-link" href="/categorias">Categorías</a></li>
                 <li class="nav-item"><a class="nav-link" href="/proveedores">Proveedores</a></li>
                 <li class="nav-item"><a class="nav-link" href="/movimientos">Movimientos</a></li>
@@ -37,6 +37,9 @@
         @endif
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
+        @if ($errors->has('error'))
+            <div class="alert alert-danger">{{ $errors->first('error') }}</div>
         @endif
 
         @yield('content')

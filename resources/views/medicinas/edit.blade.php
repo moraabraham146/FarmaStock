@@ -5,7 +5,7 @@
 @section('content')
     <h1 class="h3 mb-3">Editar medicina</h1>
 
-    <form action="#" method="POST" class="card card-body shadow-sm">
+    <form action="{{ route('medicinas.update', $medicina) }}" method="POST" class="card card-body shadow-sm">
         @csrf
         @method('PUT')
 
