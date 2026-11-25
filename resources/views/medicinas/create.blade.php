@@ -10,7 +10,7 @@
 
         <div class="row g-3">
             <div class="col-md-4">
-                <label for="codigo" class="form-label">Código</label>
+                <label for="codigo" class="form-label">Código <span class="text-danger"> * </span></label>
                 <input type="text" name="codigo" id="codigo" maxlength="50"  required
                        class="form-control @error('codigo') is-invalid @enderror"
                        value="{{ old('codigo') }}">
@@ -18,7 +18,7 @@
             </div>
 
             <div class="col-md-8">
-                <label for="nombre" class="form-label">Nombre</label>
+                <label for="nombre" class="form-label">Nombre <span class="text-danger"> * </span> </label>
                 <input type="text" name="nombre" id="nombre" maxlength="150" required
                        class="form-control @error('nombre') is-invalid @enderror"
                        value="{{ old('nombre') }}">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-md-6">
-                <label for="categoria_id" class="form-label">Categoría</label>
+                <label for="categoria_id" class="form-label">Categoría <span class="text-danger"> * </span> </label>
                 <select name="categoria_id" id="categoria_id"
                         class="form-select @error('categoria_id') is-invalid @enderror">
                     <option value="">Seleccione...</option>
@@ -41,13 +41,13 @@
 
             <div class="col-md-6">
                 <label for="principio_activo" class="form-label">Principio activo</label>
-                <input type="text" name="principio_activo" id="principio_activo" maxlength="150" required
+                <input type="text" name="principio_activo" id="principio_activo" maxlength="150" 
                        class="form-control" value="{{ old('principio_activo') }}">
             </div>
 
             <div class="col-md-6">
                 <label for="presentacion" class="form-label">Presentación</label>
-                <input type="text" name="presentacion" id="presentacion" maxlength="80" required
+                <input type="text" name="presentacion" id="presentacion" maxlength="80" 
                        class="form-control @error('presentacion') is-invalid @enderror"
                        value="{{ old('presentacion') }}">
                 @error('presentacion') <div class="invalid-feedback">{{ $message }}</div> @enderror
@@ -55,12 +55,12 @@
 
             <div class="col-md-6">
                 <label for="laboratorio" class="form-label">Laboratorio</label>
-                <input type="text" name="laboratorio" id="laboratorio" maxlength="100" required
+                <input type="text" name="laboratorio" id="laboratorio" maxlength="100" 
                        class="form-control" value="{{ old('laboratorio') }}">
             </div>
 
             <div class="col-md-6">
-                <label for="precio_unitario" class="form-label">Precio unitario</label>
+                <label for="precio_unitario" class="form-label">Precio unitario <span class="text-danger"> * </span> </label>
                 <input type="number" step="0.01" min="0" name="precio_unitario" id="precio_unitario" required
                        class="form-control @error('precio_unitario') is-invalid @enderror"
                        value="{{ old('precio_unitario', '0.00') }}">
